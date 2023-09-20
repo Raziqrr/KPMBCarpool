@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carpool</title>
+    {% load static %}
+    <link href="{% static 'styles.css' %}" rel="stylesheet">
+    <link href="../static/styles.css" rel="stylesheet">    
+</head>
+<body>
+    <div class="container_landing">
+        <div class="landing_left">
+            <h1>Carpool</h1>
+            <p class="landing_text">Carpool - your eco-friendly, budget-friendly ride to campus. Fixed prices, easy reservations, and meaningful connections with fellow students. Save money, reduce emissions, and enjoy a faster commute. Be a driver, earn, and support your college community. Safe, reliable, and sustainable. Join now and ride together for a greener campus!</p>
+            <div class="buttons_container">
+                <a class="button_var1" href="login">Log in</a>
+                <a href="register" class="button_var2"><svg class="icon_var1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM17 13H13V17H11V13H7V11H11V7H13V11H17V13Z"/>
+                    </svg>Create an account</a>
+            </div>
+        </div>
+        <div class="landing_right">
+            <img src="../static/img/28910691_7506749.jpg">
+        </div>
+    </div>
+    <div class="footer">
+        <div class="logo_containerf">
+            <img src="{% static 'img/MPP.png' %}">
+            <img src="{% static 'img/LogoKPM.png' %}">
+            <img src="{% static 'img/DCS.png' %}">            
+        </div>
+        <h6>© COPYRIGHT <b>KPMB</b> 2023</h6>
+        <br>
+        <h6>DESIGN & DEVELOPMENT BY <b>BIRO AKTIVITI SUKAN DAN KEBAJIKAN DIPLOMA IN COMPUTER SCIENCE ASSOCIATE</b></h6>
+        <h6>IN COLLABORATION WITH <b>ENTREPRENEURSHIP AND INNOVATION EXCO (STUDENT REPRESENTATIVE COUNCIL)</b></h6>
+        <br>
+        <h6>KPMB TIDAK AKAN BERTANGGUNGJAWAB KE ATAS KEROSAKAN ATAU KERUGIAN BERIKUTAN PENGGUNAAN PERKHIDMATAN DI LAMAN WEB INI</h6>
+        <h6>SEMUA MAKLUMAT YANG DIPAPARKAN ADALAH BENAR DAN BETUL PADA MASA DAN TARIKH IA DIMUAT NAIK DAN BOLEH BERUBAH DARI SEMASA KE SEMASA</h6>
+    </div>
+</body>
+</html>

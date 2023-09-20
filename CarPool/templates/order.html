@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Successful Order</title>
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'img/icon.png' %}">
+    <link href="{% static 'styles.css' %}" rel="stylesheet">     
+    <title>Your Orders</title>
+</head>
+<body id="loginpage">
+    {{ pay }}
+    {{ data.payment }}
+    <div class="registered_container">
+        <h1>Carpool</h1>
+        <h2>Your order has been made</h2>
+        <div class="registered_buttons">
+            <a class="button_var1" href="/passenger/{{ p }}">Back to home</a>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="logo_containerf">
+            <img src="{% static 'img/MPP.png' %}">
+            <img src="{% static 'img/LogoKPM.png' %}">
+            <img src="{% static 'img/DCS.png' %}">            
+        </div>
+        <h6>© COPYRIGHT <b>KPMB</b> 2023</h6>
+        <br>
+        <h6>DESIGN & DEVELOPMENT BY <b>BIRO AKTIVITI SUKAN DAN KEBAJIKAN DIPLOMA IN COMPUTER SCIENCE ASSOCIATE</b></h6>
+        <h6>IN COLLABORATION WITH <b>ENTREPRENEURSHIP AND INNOVATION EXCO (STUDENT REPRESENTATIVE COUNCIL)</b></h6>
+        <br>
+        <h6>KPMB TIDAK AKAN BERTANGGUNGJAWAB KE ATAS KEROSAKAN ATAU KERUGIAN BERIKUTAN PENGGUNAAN PERKHIDMATAN DI LAMAN WEB INI</h6>
+        <h6>SEMUA MAKLUMAT YANG DIPAPARKAN ADALAH BENAR DAN BETUL PADA MASA DAN TARIKH IA DIMUAT NAIK DAN BOLEH BERUBAH DARI SEMASA KE SEMASA</h6>
+    </div>
+</body>
+</html>

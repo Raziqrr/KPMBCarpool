@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'img/icon.png' %}">
+    <link href="{% static 'styles.css' %}" rel="stylesheet">     
+    <title>{{ data.dName }}'s Page</title>
+</head>
+<body>
+    <div id="navLogo2">
+        <img src="{% static 'img/logoopt2.png' %}" id="logo" alt="CarPool Logo">
+    </div>
+    <div class="userpage">
+        <div class="userprofile">
+            <a class="logout" href="/login">Log out</a>
+            <div class="profileicon">
+                <img src="{% static 'img/profileicon.png' %}">
+                <h5>Driver</h5>
+            </div>
+            <div class="pdetails">
+                <h5>Name</h5>
+                <h4>{{ data.dName }}</h4>
+            </div>
+            <div class="pdetails">
+                <h5>Student ID</h5>
+                <h4>{{ data.studentID }}</h4>
+            </div>
+            <div class="pdetails">
+                <h5>Phone Number</h5>
+                <h4>{{ data.dPhone }}</h4>
+            </div>
+            <div class="pdetails">
+                <h5>Car</h5>
+                <h4>{{ data.carcolor }} {{ data.vID__brand }} {{ data.vID__CarModel }}</h4>
+            </div>
+            <div class="pdetails">
+                <h5>Registration Plate</h5>
+                <h4>{{ data.plate }}</h4>
+            </div>
+            <div class="pdetails">
+                <h5>Car Capacity</h5>
+                <h4>{{ data.vID__capacity }}</h4>
+            </div>
+            <div class="updatebutton">
+                <a class="deleteprofile" href="delete_d/{{ data.dID }}">Delete</a>
+                <a class="updateprofile" href="update_details_d/{{ data.dID }}">Update</a>
+            </div>
+        </div>
+        <div class="order_request">
+            <div class="av_orders">
+                <h1>Available Orders</h1>
+                <a class="viewreq" href="view_orders/{{ data.dID }}">Your Orders</a>
+            </div>
+            
+            <div class="orders">
+                {% for x in orders %}
+                    <div class="orderticket">
+                    <div class="ordername">
+                        <h1>{{ x.pID__pName }} | {{ x.pID__studentID }}</h1>
+                        <img src="{% static 'img/caricon.png' %}">
+                    </div>
+                    <div class="orderdetails">
+                        <div class="orderlocation">
+                            <div class="from"><h3>From</h3><h5>{{ x.rID__rFrom }}</h5></div>
+                            <hr>
+                            <div class="to"><h3>To</h3><h5>{{ x.rID__rTo }}</h5></div>
+                        </div>
+                        <div class="pc">
+                            <h3>Passengers</h3>
+                            <div class="passengercount">
+                                <img src="{% static 'img/people.png' %}"><h5>{{ x.passengers }}</h5>
+                            </div>
+                        </div>
+                        <div class="orderdate">
+                            <div>
+                                <h3>Date</h3>
+                                <h5>{{ x.date }}</h5>
+                            </div>
+                            <div>
+                                <h3>Time</h3>
+                                <h5>{{ x.time }}</h5>
+                            </div>                           
+                        </div>
+                    </div>
+                    <div class="acceptorder"><a href="acceptorder/{{ x.id }},{{ data.dID }}">Accept</a></div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="logo_containerf">
+            <img src="{% static 'img/MPP.png' %}">
+            <img src="{% static 'img/LogoKPM.png' %}">
+            <img src="{% static 'img/DCS.png' %}">            
+        </div>
+        <h6>© COPYRIGHT <b>KPMB</b> 2023</h6>
+        <br>
+        <h6>DESIGN & DEVELOPMENT BY <b>BIRO AKTIVITI SUKAN DAN KEBAJIKAN DIPLOMA IN COMPUTER SCIENCE ASSOCIATE</b></h6>
+        <h6>IN COLLABORATION WITH <b>ENTREPRENEURSHIP AND INNOVATION EXCO (STUDENT REPRESENTATIVE COUNCIL)</b></h6>
+        <br>
+        <h6>KPMB TIDAK AKAN BERTANGGUNGJAWAB KE ATAS KEROSAKAN ATAU KERUGIAN BERIKUTAN PENGGUNAAN PERKHIDMATAN DI LAMAN WEB INI</h6>
+        <h6>SEMUA MAKLUMAT YANG DIPAPARKAN ADALAH BENAR DAN BETUL PADA MASA DAN TARIKH IA DIMUAT NAIK DAN BOLEH BERUBAH DARI SEMASA KE SEMASA</h6>
+    </div>
+</body>
+</html>

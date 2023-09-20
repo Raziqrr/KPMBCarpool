@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Edit</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- {% load static %} -->
+        <link rel="icon" type="image/x-icon" href="{% static 'img/icon.png' %}">
+        <link href="{% static 'styles.css' %}" rel="stylesheet">     
+        <link href="../static/styles.css" rel="stylesheet">    
+    </head>
+<body>
+    <nav>
+        <div class="nav_profile">
+            <a href="/passenger/view_profile/{{ p }}"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <rect width="40" height="40" fill="url(#pattern0)"/>
+                <defs>
+                <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                <use xlink:href="#image0_37_10" transform="scale(0.0104167)"/>
+                </pattern>
+                <image id="image0_37_10" width="96" height="96" xlink:href="data:image/png;base64,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"/>
+                </defs>
+                </svg></a>
+            <a class="nav_buttons" href="/login" >Log out</a>
+        </div>
+        <h1 class="logonav">Carpool</h1>
+        <div class="nav_profile_right">
+            <a class="nav_buttons" href="/passenger/{{ p }}">Order a Ride</a>
+            <a class="nav_buttons" href="/passenger/view_requests/{{ p }}">My Orders</a>
+        </div>
+    </nav>
+    <div class="home_container">
+        <h2><svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+            width="30px" height="30px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+       <path d="M62.829,16.484L47.513,1.171c-1.562-1.563-4.094-1.563-5.657,0L0,43.031V64h20.973l41.856-41.855
+           C64.392,20.577,64.392,18.05,62.829,16.484z M18,56H8V46l0.172-0.172l10,10L18,56z"/>
+       </svg>Edit Order</h2>
+       
+        <form class="order_a_ride" method="post" action="/passenger/view_requests/editreq/saveedit/{{ data.id }},{{ p }}">
+            {% csrf_token %}
+            <div class="order_main_container">
+                <div class="order_left">
+                <h4>Pickup Location</h4>
+                <div class="input_box">
+                    <select name="rFrom" required>
+                        <option>Choose Pick Up Location</option>
+                        {% for x in r %}
+                            {% if x ==  data.rID__rFrom %}
+                            <option value='{{ x }}' selected>{{ x }}</option>
+                            {% else %}
+                            <option value='{{ x }}'>{{ x }}</option>
+                            {% endif %} 
+                        {% endfor %}
+                    </select>
+                    <svg class="error" width="24" height="24" viewBox="0 0 24 24" fill="FF0035" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM11 15H13V17H11V15ZM11 7H13V13H11V7Z" fill="#FF0035"/>
+                    </svg>
+                </div>
+                <h4>Drop Off Location</h4>
+                <div class="input_box">
+                    <select name="rTo" required>
+                        <option>Choose Drop Off Location</option>
+                        {% for x in r %}
+                            {% if x ==  data.rID__rTo %}
+                            <option value='{{ x }}' selected>{{ x }}</option>
+                            {% else %}
+                            <option value='{{ x }}'>{{ x }}</option>
+                            {% endif %} 
+                        {% endfor %}
+                    </select>
+                    <svg class="error" width="24" height="24" viewBox="0 0 24 24" fill="FF0035" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM11 15H13V17H11V15ZM11 7H13V13H11V7Z" fill="#FF0035"/>
+                    </svg>
+                </div>
+                <h4>Number Of Passengers</h4>
+                <div class="input_box">
+                    <input type="number" placeholder="Number Of Passengers" value="{{ data.passengers }}" name="passengers" required>
+                    <svg class="error" width="24" height="24" viewBox="0 0 24 24" fill="FF0035" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM11 15H13V17H11V15ZM11 7H13V13H11V7Z" fill="#FF0035"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="order_right">
+                <h4>Date</h4>
+                <div class="input_box">
+                    <input type="date" value="{{ data.date|date:'Y-m-d' }}" name="date" required>
+                    <svg class="error" width="24" height="24" viewBox="0 0 24 24" fill="FF0035" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM11 15H13V17H11V15ZM11 7H13V13H11V7Z" fill="#FF0035"/>
+                    </svg>
+                </div>
+                <h4>Time</h4>
+                <div class="input_box">
+                    <input type="time" value="{{ data.time|time:'h:i:s' }}" name="time" required>
+                    <svg class="error" width="24" height="24" viewBox="0 0 24 24" fill="FF0035" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM11 15H13V17H11V15ZM11 7H13V13H11V7Z" fill="#FF0035"/>
+                    </svg>
+                </div>
+                <h4>Payment Method</h4>
+                <div class="input_box">
+                    
+                    <label for="vehicle1"><h4>E-wallet</h4>
+                        <input type="checkbox" name="E-wallet" value="E-wallet">
+                        <span class="checkmark"></span>
+                    </label><br><br>
+                    
+                    <label for="vehicle1"><h4>Cash</h4>
+                        <input type="checkbox" name="Cash" value="Cash">
+                        <span class="checkmark"></span>
+                    </label><br>
+                    <svg class="error" width="24" height="24" viewBox="0 0 24 24" fill="FF0035" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM11 15H13V17H11V15ZM11 7H13V13H11V7Z" fill="#FF0035"/>
+                    </svg>
+                </div>
+            </div>
+            </div>
+            <input class="var2" type="submit" value="Save Changes">
+        </form>
+        <a class="back_btn" href="/passenger/{{ p }}">Back</a>
+    </div>
+    <div class="footer">
+        <div class="logo_containerf">
+            <img src="{% static 'img/MPP.png' %}">
+            <img src="{% static 'img/LogoKPM.png' %}">
+            <img src="{% static 'img/DCS.png' %}">            
+        </div>
+        <h6>© COPYRIGHT <b>KPMB</b> 2023</h6>
+        <br>
+        <h6>DESIGN & DEVELOPMENT BY <b>BIRO AKTIVITI SUKAN DAN KEBAJIKAN DIPLOMA IN COMPUTER SCIENCE ASSOCIATE</b></h6>
+        <h6>IN COLLABORATION WITH <b>ENTREPRENEURSHIP AND INNOVATION EXCO (STUDENT REPRESENTATIVE COUNCIL)</b></h6>
+        <br>
+        <h6>KPMB TIDAK AKAN BERTANGGUNGJAWAB KE ATAS KEROSAKAN ATAU KERUGIAN BERIKUTAN PENGGUNAAN PERKHIDMATAN DI LAMAN WEB INI</h6>
+        <h6>SEMUA MAKLUMAT YANG DIPAPARKAN ADALAH BENAR DAN BETUL PADA MASA DAN TARIKH IA DIMUAT NAIK DAN BOLEH BERUBAH DARI SEMASA KE SEMASA</h6>
+    </div>
+</body>
+</html>

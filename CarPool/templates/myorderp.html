@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Orders</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% load static %}
+        <link rel="icon" type="image/x-icon" href="{% static 'img/icon.png' %}">
+        <link href="{% static 'styles.css' %}" rel="stylesheet">     
+        <link href="../static/styles.css" rel="stylesheet">    
+    </head>
+<body>
+    <nav>
+        <div class="nav_profile">
+            <a href="/passenger/view_profile/{{ data.pID }}"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <rect width="40" height="40" fill="url(#pattern0)"/>
+                <defs>
+                <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                <use xlink:href="#image0_37_10" transform="scale(0.0104167)"/>
+                </pattern>
+                <image id="image0_37_10" width="96" height="96" xlink:href="data:image/png;base64,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"/>
+                </defs>
+                </svg></a>
+            <a class="nav_buttons" href="/login" >Log out</a>
+        </div>
+        <h1 class="logonav">Carpool</h1>
+        <div class="nav_profile_right">
+            <a class="nav_buttons" href="/passenger/{{ data.pID }}">Order a Ride</a>
+            <a class="nav_buttons" href="/passenger/view_requests/{{ data.pID }}">My Orders</a>
+        </div>
+    </nav>
+    <div class="home_container">
+        <h2><img src="{% static 'img/icons8-ticket-96 (1).png' %}">
+            My Orders</h2>
+        <div class="available_orders_container_p">
+            <div class="pending_orders">
+                <h2 class="alt">Pending Orders</h2>
+                {% for x in req %}
+                <div class="order_display_pending">
+                    <div class="order_top_details">
+                        <div>
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="#FFC300"/>
+                                        </svg>
+                                <h5 class="alt">{{ x.rID__rFrom }}</h5>
+                                <span class="alt">>>>></span>
+                                <h5 class="alt">{{ x.rID__rTo }}</h5>
+                            </div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M9 11H7V13H9V11ZM13 11H11V13H13V11ZM17 11H15V13H17V11ZM19 4H18V2H16V4H8V2H6V4H5C3.89 4 3.01 4.9 3.01 6L3 20C3 21.1 3.89 22 5 22H19C20.1 22 21 21.1 21 20V6C21 4.9 20.1 4 19 4ZM19 20H5V9H19V20Z" fill="#FFC300"/>
+                                    </svg>
+                                <h6>{{ x.date }}</h6>
+                            </div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z" fill="#FFC300"/>
+                                    </svg>
+                                    
+                                <h6>{{ x.time }}</h6>
+                            </div>
+                        </div>
+                        <div class="price_detail">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none">
+                                <path d="M26.0002 4.33334C14.0402 4.33334 4.3335 14.04 4.3335 26C4.3335 37.96 14.0402 47.6667 26.0002 47.6667C37.9602 47.6667 47.6668 37.96 47.6668 26C47.6668 14.04 37.9602 4.33334 26.0002 4.33334ZM29.0552 39.195V40.4517C29.0552 42.0333 27.7552 43.3333 26.1735 43.3333H26.1518C24.5702 43.3333 23.2702 42.0333 23.2702 40.4517V39.1517C20.3885 38.545 17.8318 36.9633 16.7485 34.2983C16.2502 33.1067 17.1818 31.785 18.4818 31.785H19.0018C19.8035 31.785 20.4535 32.3267 20.7568 33.085C21.3852 34.71 23.0318 35.8367 26.1952 35.8367C30.4418 35.8367 31.3952 33.7133 31.3952 32.3917C31.3952 30.5933 30.4418 28.9033 25.6102 27.755C20.2368 26.455 16.5535 24.245 16.5535 19.8033C16.5535 16.0767 19.5652 13.65 23.2918 12.8483V11.5483C23.2918 9.96668 24.5918 8.66668 26.1735 8.66668H26.1952C27.7768 8.66668 29.0768 9.96668 29.0768 11.5483V12.8917C32.0668 13.6283 33.9518 15.4917 34.7752 17.7883C35.2085 18.98 34.2985 20.2367 33.0202 20.2367H32.4568C31.6552 20.2367 31.0052 19.6733 30.7885 18.8933C30.2902 17.2467 28.9252 16.185 26.1952 16.185C22.9452 16.185 20.9952 17.6583 20.9952 19.7383C20.9952 21.5583 22.4035 22.75 26.7802 23.8767C31.1568 25.0033 35.8368 26.8883 35.8368 32.3483C35.7935 36.3133 32.8252 38.48 29.0552 39.195Z" fill="#06D6A0"/>
+                                </svg>                            
+                            <h4 class="alt">RM {{ x.rID__rPrice }}.00</h4>
+                        </div>
+                    </div>
+                    <div class="order_mid_details" id="m{{ x.id }}">
+                        <div class="mid_left">
+                            
+                        <h3><svg class="order_detail_icon" width="26.67px" height="26.67px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M36.31,176c0.674,0.386 24.255,13.789 43.69,13.789c19.435,0 43.826,-13.403 44.524,-13.789l9.047,0c14.641,0.044 26.429,11.859 26.429,26.429l0,101.571c0,17.673 -14.327,32 -32,32l0,120c0,13.255 -10.745,24 -24,24l-48,0c-13.255,0 -24,-10.745 -24,-24l0,-120c-17.673,0 -32,-14.327 -32,-32l0,-100.738c0,-15.028 12.16,-27.216 27.262,-27.262l9.048,0Zm176,0c0.674,0.386 24.256,13.789 43.69,13.789c19.434,0 43.826,-13.403 44.524,-13.789l9.047,0c14.641,0.044 26.429,11.859 26.429,26.429l0,101.571c0,17.673 -14.327,32 -32,32l0,120c0,13.255 -10.745,24 -24,24l-48,0c-13.255,0 -24,-10.745 -24,-24l0,-120c-17.673,0 -32,-14.327 -32,-32l0,-100.738c0,-15.028 12.16,-27.216 27.262,-27.262l9.048,0Zm243.69,304l-48,0c-13.255,0 -24,-10.745 -24,-24l0,-120c-17.673,0 -32,-14.327 -32,-32l0,-100.738c0,-15.056 12.206,-27.262 27.262,-27.262l9.048,0c0,0 23.978,13.789 43.69,13.789c19.712,0 44.524,-13.789 44.524,-13.789l9.047,0c14.597,0 26.429,11.832 26.429,26.429l0,101.571c0,17.673 -14.327,32 -32,32l0,120c0,13.222 -10.691,23.946 -24,24Zm-376,-320c35.346,0 64,-28.654 64,-64c0,-35.346 -28.654,-64 -64,-64c-35.346,0 -64,28.654 -64,64c0,35.346 28.654,64 64,64Zm176,0c35.346,0 64,-28.654 64,-64c0,-35.346 -28.654,-64 -64,-64c-35.346,0 -64,28.654 -64,64c0,35.346 28.654,64 64,64Zm240,-64c0,35.346 -28.654,64 -64,64c-35.346,0 -64,-28.654 -64,-64c0,-35.346 28.654,-64 64,-64c35.346,0 64,28.654 64,64Z"></path></svg>Passenger Count</h3>
+                        <h3>{{ x.passengers }}</h3>
+                        </div>
+                        <div class="mid_right">
+                        
+                            <h3><svg class="order_detail_icon" xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+                                <path d="M29.1665 5.83334H5.83317C4.21442 5.83334 2.93109 7.13125 2.93109 8.75L2.9165 26.25C2.9165 27.8688 4.21442 29.1667 5.83317 29.1667H29.1665C30.7853 29.1667 32.0832 27.8688 32.0832 26.25V8.75C32.0832 7.13125 30.7853 5.83334 29.1665 5.83334ZM29.1665 26.25H5.83317V17.5H29.1665V26.25ZM29.1665 11.6667H5.83317V8.75H29.1665V11.6667Z" fill="#FFC300"/>
+                              </svg>Payment Method</h3>
+                            <h3>{{ x.payment }}</h3>
+                        </div>
+                    </div>
+                    <div class="view_details_container">
+                        <div id="v{{ x.id }}" class="view_details">view details<svg xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8" fill="none">
+                            <path d="M11.516 7.64465L6.79401 2.9309L2.07204 7.64465C1.59741 8.11845 0.830702 8.11845 0.356071 7.64465C-0.11856 7.17084 -0.11856 6.40547 0.356071 5.93166L5.94211 0.355353C6.41674 -0.118451 7.18345 -0.118451 7.65808 0.355353L13.2441 5.93166C13.7188 6.40547 13.7188 7.17084 13.2441 7.64465C12.7695 8.1063 11.9906 8.11845 11.516 7.64465Z" fill="#FFC300"/>
+                            </svg></div>
+                    </div>
+                        <div class="porder_buttons_pending">
+                            <a class="edit_button" href="editreq/{{ x.id }},{{ p }}"">Edit</a>
+                            <a class="cancel_button" href="cancel_orders/{{ x.id }},{{ p }}">Cancel</a>                    
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            {% for x in acpt %}
+            <div class="on_going_orders">
+                <h2 class="alt">Accepted Orders</h2>
+              <div class="order_display_ongoing">
+                <div class="order_top_details">
+                    <div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="#FFC300"/>
+                                    </svg>
+                                    <h5 class="alt">{{ x.rID__rFrom }}</h5>
+                                    <span class="alt">>>>></span>
+                                    <h5 class="alt">{{ x.rID__rTo }}</h5>
+                        </div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M9 11H7V13H9V11ZM13 11H11V13H13V11ZM17 11H15V13H17V11ZM19 4H18V2H16V4H8V2H6V4H5C3.89 4 3.01 4.9 3.01 6L3 20C3 21.1 3.89 22 5 22H19C20.1 22 21 21.1 21 20V6C21 4.9 20.1 4 19 4ZM19 20H5V9H19V20Z" fill="#FFC300"/>
+                                </svg>
+                            <h6>12.00 a.m.</h6>
+                        </div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z" fill="#FFC300"/>
+                                </svg>
+                                
+                            <h6>12/8/2023</h6>
+                        </div>
+                    </div>
+                    <div class="price_detail">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none">
+                            <path d="M26.0002 4.33334C14.0402 4.33334 4.3335 14.04 4.3335 26C4.3335 37.96 14.0402 47.6667 26.0002 47.6667C37.9602 47.6667 47.6668 37.96 47.6668 26C47.6668 14.04 37.9602 4.33334 26.0002 4.33334ZM29.0552 39.195V40.4517C29.0552 42.0333 27.7552 43.3333 26.1735 43.3333H26.1518C24.5702 43.3333 23.2702 42.0333 23.2702 40.4517V39.1517C20.3885 38.545 17.8318 36.9633 16.7485 34.2983C16.2502 33.1067 17.1818 31.785 18.4818 31.785H19.0018C19.8035 31.785 20.4535 32.3267 20.7568 33.085C21.3852 34.71 23.0318 35.8367 26.1952 35.8367C30.4418 35.8367 31.3952 33.7133 31.3952 32.3917C31.3952 30.5933 30.4418 28.9033 25.6102 27.755C20.2368 26.455 16.5535 24.245 16.5535 19.8033C16.5535 16.0767 19.5652 13.65 23.2918 12.8483V11.5483C23.2918 9.96668 24.5918 8.66668 26.1735 8.66668H26.1952C27.7768 8.66668 29.0768 9.96668 29.0768 11.5483V12.8917C32.0668 13.6283 33.9518 15.4917 34.7752 17.7883C35.2085 18.98 34.2985 20.2367 33.0202 20.2367H32.4568C31.6552 20.2367 31.0052 19.6733 30.7885 18.8933C30.2902 17.2467 28.9252 16.185 26.1952 16.185C22.9452 16.185 20.9952 17.6583 20.9952 19.7383C20.9952 21.5583 22.4035 22.75 26.7802 23.8767C31.1568 25.0033 35.8368 26.8883 35.8368 32.3483C35.7935 36.3133 32.8252 38.48 29.0552 39.195Z" fill="#06D6A0"/>
+                            </svg>                            
+                        <h4 class="alt">RM 6.00</h4>
+                    </div>
+                </div>
+                <div class="order_mid_details" id="m{{ x.id }}">
+                    <div class="mid_left">
+                        <h3><svg class="order_detail_icon" version="1.0" xmlns="http://www.w3.org/2000/svg"
+                            width="20.000000pt" height="20.000000pt" viewBox="0 0 20.000000 20.000000"
+                            preserveAspectRatio="xMidYMid meet">
+                            <metadata>
+                            Created by potrace 1.16, written by Peter Selinger 2001-2019
+                            </metadata>
+                            <g transform="translate(0.000000,20.000000) scale(0.020833,-0.020833)"
+                            stroke="none">
+                            <path d="M328 941 c-143 -46 -258 -162 -307 -308 -26 -77 -28 -214 -5 -294 43
+                            -148 168 -274 315 -320 85 -27 219 -26 302 2 150 50 268 171 311 318 21 71 21
+                            211 0 282 -43 148 -168 274 -315 320 -80 25 -222 25 -301 0z m284 -125 c69
+                            -28 125 -72 162 -124 28 -41 70 -141 62 -149 -10 -10 -136 21 -201 50 -51 22
+                            -90 32 -141 35 -63 4 -79 0 -155 -31 -79 -33 -205 -64 -215 -54 -8 8 34 108
+                            62 149 90 130 279 185 426 124z m-77 -281 c16 -15 25 -36 25 -55 0 -19 -9 -40
+                            -25 -55 -15 -16 -36 -25 -55 -25 -19 0 -40 9 -55 25 -16 15 -25 36 -25 55 0
+                            19 9 40 25 55 15 16 36 25 55 25 19 0 40 -9 55 -25z m-195 -150 c46 -24 60
+                            -62 60 -165 0 -74 -3 -90 -15 -90 -26 0 -113 49 -155 86 -37 34 -100 141 -100
+                            171 0 20 171 18 210 -2z m490 0 c0 -26 -49 -113 -85 -154 -35 -38 -139 -101
+                            -169 -101 -14 0 -16 14 -16 90 0 151 27 179 178 180 76 0 92 -3 92 -15z"/>
+                            </g>
+                        </svg>Driver Details</h3>
+                        <div class="order_details">
+                            <div class="order_category">Name</div>
+                            <span>:</span>
+                            <div class="order_details_text">{{ x.dID__dName }}</div>
+                        </div>
+                        <div class="order_details">
+                            <div class="order_category">Phone Number</div>
+                            <span>:</span>
+                            <div class="order_details_text">{{ x.dID__dPhone }}</div>
+                        </div>
+                    </div>
+                    <div class="mid_mid">
+                        <h3><svg version="1.0" class="order_detail_icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26.67px" height="26.67px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"/> 
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                            <g id="SVGRepo_iconCarrier"> <path d="M60,28c0-8.301-5.016-24-24-24h-8C9.016,4,4,19.699,4,28c-2.211,0-4,1.789-4,4v16c0,2.211,1.789,4,4,4h4v4 c0,2.211,1.789,4,4,4h4c2.211,0,4-1.789,4-4v-4h24v4c0,2.211,1.789,4,4,4h4c2.211,0,4-1.789,4-4v-4h4c2.211,0,4-1.789,4-4V32 C64,29.789,62.211,28,60,28z M16,44c-2.211,0-4-1.789-4-4s1.789-4,4-4s4,1.789,4,4S18.211,44,16,44z M12,28c0-0.652,0.184-16,16-16 h8c15.41,0,15.984,14.379,16,16H12z M48,44c-2.211,0-4-1.789-4-4s1.789-4,4-4s4,1.789,4,4S50.211,44,48,44z"/> </g>
+                            </svg>Car Details</h3>
+                            <div class="order_details">
+                                <div class="order_category">Car Model</div>
+                                <span>:</span>
+                                <div class="order_details_text">{{ x.dID__carcolor }} {{ x.vID__brand }} {{ x.vID__CarModel }}</div>
+                            </div>
+                            <div class="order_details">
+                                <div class="order_category">Plate Number</div>
+                                <span>:</span>
+                                <div class="order_details_text">{{ x.dID__plate }}</div>
+                            </div>
+                    </div>
+                    <div class="mid_right">
+                        <h3><svg class="order_detail_icon" width="26.67px" height="26.67px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M36.31,176c0.674,0.386 24.255,13.789 43.69,13.789c19.435,0 43.826,-13.403 44.524,-13.789l9.047,0c14.641,0.044 26.429,11.859 26.429,26.429l0,101.571c0,17.673 -14.327,32 -32,32l0,120c0,13.255 -10.745,24 -24,24l-48,0c-13.255,0 -24,-10.745 -24,-24l0,-120c-17.673,0 -32,-14.327 -32,-32l0,-100.738c0,-15.028 12.16,-27.216 27.262,-27.262l9.048,0Zm176,0c0.674,0.386 24.256,13.789 43.69,13.789c19.434,0 43.826,-13.403 44.524,-13.789l9.047,0c14.641,0.044 26.429,11.859 26.429,26.429l0,101.571c0,17.673 -14.327,32 -32,32l0,120c0,13.255 -10.745,24 -24,24l-48,0c-13.255,0 -24,-10.745 -24,-24l0,-120c-17.673,0 -32,-14.327 -32,-32l0,-100.738c0,-15.028 12.16,-27.216 27.262,-27.262l9.048,0Zm243.69,304l-48,0c-13.255,0 -24,-10.745 -24,-24l0,-120c-17.673,0 -32,-14.327 -32,-32l0,-100.738c0,-15.056 12.206,-27.262 27.262,-27.262l9.048,0c0,0 23.978,13.789 43.69,13.789c19.712,0 44.524,-13.789 44.524,-13.789l9.047,0c14.597,0 26.429,11.832 26.429,26.429l0,101.571c0,17.673 -14.327,32 -32,32l0,120c0,13.222 -10.691,23.946 -24,24Zm-376,-320c35.346,0 64,-28.654 64,-64c0,-35.346 -28.654,-64 -64,-64c-35.346,0 -64,28.654 -64,64c0,35.346 28.654,64 64,64Zm176,0c35.346,0 64,-28.654 64,-64c0,-35.346 -28.654,-64 -64,-64c-35.346,0 -64,28.654 -64,64c0,35.346 28.654,64 64,64Zm240,-64c0,35.346 -28.654,64 -64,64c-35.346,0 -64,-28.654 -64,-64c0,-35.346 28.654,-64 64,-64c35.346,0 64,28.654 64,64Z"></path></svg>Passenger Count</h3>
+                        <h3>{{ x.passengers }}</h3>
+                        <h3><svg class="order_detail_icon" xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+                            <path d="M29.1665 5.83334H5.83317C4.21442 5.83334 2.93109 7.13125 2.93109 8.75L2.9165 26.25C2.9165 27.8688 4.21442 29.1667 5.83317 29.1667H29.1665C30.7853 29.1667 32.0832 27.8688 32.0832 26.25V8.75C32.0832 7.13125 30.7853 5.83334 29.1665 5.83334ZM29.1665 26.25H5.83317V17.5H29.1665V26.25ZM29.1665 11.6667H5.83317V8.75H29.1665V11.6667Z" fill="#FFC300"/>
+                          </svg>Payment Method</h3>
+                        <h3>{{ x.payment }}</h3>
+                    </div>
+                </div>
+                <div class="view_details_container">
+                    <div id="v{{ x.id }}" class="view_details">view details<svg xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8" fill="none">
+                        <path d="M11.516 7.64465L6.79401 2.9309L2.07204 7.64465C1.59741 8.11845 0.830702 8.11845 0.356071 7.64465C-0.11856 7.17084 -0.11856 6.40547 0.356071 5.93166L5.94211 0.355353C6.41674 -0.118451 7.18345 -0.118451 7.65808 0.355353L13.2441 5.93166C13.7188 6.40547 13.7188 7.17084 13.2441 7.64465C12.7695 8.1063 11.9906 8.11845 11.516 7.64465Z" fill="#FFC300"/>
+                        </svg></div>
+                </div>
+                <div class="porder_buttons_pending">
+                    <a class="edit_button" href="editreq/{{ x.id }},{{ p }}"">Edit</a>
+                    <a class="cancel_button" href="cancel_orders/{{ x.id }},{{ p }}">Cancel</a>                    
+                </div>
+            </div>  
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="footer">
+        <div class="logo_containerf">
+            <img src="{% static 'img/MPP.png' %}">
+            <img src="{% static 'img/LogoKPM.png' %}">
+            <img src="{% static 'img/DCS.png' %}">            
+        </div>
+        <h6>© COPYRIGHT <b>KPMB</b> 2023</h6>
+        <br>
+        <h6>DESIGN & DEVELOPMENT BY <b>BIRO AKTIVITI SUKAN DAN KEBAJIKAN DIPLOMA IN COMPUTER SCIENCE ASSOCIATE</b></h6>
+        <h6>IN COLLABORATION WITH <b>ENTREPRENEURSHIP AND INNOVATION EXCO (STUDENT REPRESENTATIVE COUNCIL)</b></h6>
+        <br>
+        <h6>KPMB TIDAK AKAN BERTANGGUNGJAWAB KE ATAS KEROSAKAN ATAU KERUGIAN BERIKUTAN PENGGUNAAN PERKHIDMATAN DI LAMAN WEB INI</h6>
+        <h6>SEMUA MAKLUMAT YANG DIPAPARKAN ADALAH BENAR DAN BETUL PADA MASA DAN TARIKH IA DIMUAT NAIK DAN BOLEH BERUBAH DARI SEMASA KE SEMASA</h6>
+    </div>
+    <script>
+        var mids = document.getElementsByClassName("order_mid_details")
+        var views = document.getElementsByClassName("view_details")
+        function heighter(e){
+            var t = e.target.id
+            var view = document.getElementById(e.target.id)
+            var mid = document.getElementById("m"+t.slice(1, t.length))
+            var arrow = view.children[0]
+            if(mid.style.maxHeight=="0px" || mid.style.maxHeight=="0" || mid.style.maxHeight==0){
+                mid.style.maxHeight = "200px"
+                mid.style.border= "3px solid var(--primary-color)";
+                mid.style.padding= "10px";
+                arrow.style.transform = "rotate(0deg)"
+            }
+            else{
+                mid.style.maxHeight = "0px";
+                mid.style.border= "none";
+                mid.style.padding= "0px";
+                arrow.style.transform = "rotate(180deg)"
+            } 
+        }
+        for (var i = 0; i < views.length; i++){
+            views[i].addEventListener("click", heighter)
+        }
+    </script>
+</body>
+</html>

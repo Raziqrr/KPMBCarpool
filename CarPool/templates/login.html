@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'img/icon.png' %}">
+    <link href="{% static 'styles.css' %}" rel="stylesheet">     
+    <link href="../static/styles.css" rel="stylesheet">    
+</head>
+<body>
+    <div class="login_container">
+        <div class="login_left">
+            <h1 class="alt">Carpool</h1>
+            <div class="login_contents">
+                <h3 class="alt">Log in as</h3>
+                <div class="login_select_section">
+                    <div class="login_choose">
+                        <div class="login_select" id="driver">
+                            <svg class="select_role" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+                                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20Z" fill="#4361EE"/>
+                                <path id="driverc" d="M12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17Z"/>
+                            </svg>
+                            <svg id="drivericon" version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                width="20.000000pt" height="20.000000pt" viewBox="0 0 20.000000 20.000000"
+                                preserveAspectRatio="xMidYMid meet">
+                                <metadata>
+                                Created by potrace 1.16, written by Peter Selinger 2001-2019
+                                </metadata>
+                                <g transform="translate(0.000000,20.000000) scale(0.020833,-0.020833)"
+                                stroke="none">
+                                <path d="M328 941 c-143 -46 -258 -162 -307 -308 -26 -77 -28 -214 -5 -294 43
+                                -148 168 -274 315 -320 85 -27 219 -26 302 2 150 50 268 171 311 318 21 71 21
+                                211 0 282 -43 148 -168 274 -315 320 -80 25 -222 25 -301 0z m284 -125 c69
+                                -28 125 -72 162 -124 28 -41 70 -141 62 -149 -10 -10 -136 21 -201 50 -51 22
+                                -90 32 -141 35 -63 4 -79 0 -155 -31 -79 -33 -205 -64 -215 -54 -8 8 34 108
+                                62 149 90 130 279 185 426 124z m-77 -281 c16 -15 25 -36 25 -55 0 -19 -9 -40
+                                -25 -55 -15 -16 -36 -25 -55 -25 -19 0 -40 9 -55 25 -16 15 -25 36 -25 55 0
+                                19 9 40 25 55 15 16 36 25 55 25 19 0 40 -9 55 -25z m-195 -150 c46 -24 60
+                                -62 60 -165 0 -74 -3 -90 -15 -90 -26 0 -113 49 -155 86 -37 34 -100 141 -100
+                                171 0 20 171 18 210 -2z m490 0 c0 -26 -49 -113 -85 -154 -35 -38 -139 -101
+                                -169 -101 -14 0 -16 14 -16 90 0 151 27 179 178 180 76 0 92 -3 92 -15z"/>
+                                </g>
+                            </svg>
+                            <div class="button_text">Driver</div>
+                        </div>
+                        <div class="login_select" id="passenger">
+                            <svg class="select_role" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20Z" fill="#4361EE"/>
+                                <path id="passengerc" d="M12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17Z"/>                            </svg>
+                            <svg id="passengericon" version="1.0" xmlns="http://www.w3.org/2000/svg"
+                            width="20.000000pt" height="20.000000pt" viewBox="0 0 20.000000 20.000000"
+                            preserveAspectRatio="xMidYMid meet">
+                            <metadata>
+                            Created by potrace 1.16, written by Peter Selinger 2001-2019
+                            </metadata>
+                            <g transform="translate(0.000000,20.000000) scale(0.020833,-0.020833)"
+                             stroke="none">
+                            <path d="M373 854 c-62 -37 -93 -95 -93 -174 0 -123 77 -200 200 -200 123 0
+                            200 77 200 200 0 123 -77 200 -201 200 -51 0 -73 -5 -106 -26z"/>
+                            <path d="M120 573 c0 -22 17 -43 79 -98 l79 -70 -41 -6 c-57 -8 -77 -37 -77
+                            -109 0 -43 6 -65 23 -91 30 -45 90 -84 158 -103 81 -23 279 -20 279 4 0 5 -71
+                            73 -157 152 -153 139 -156 143 -125 146 29 3 47 -11 182 -135 83 -76 155 -139
+                            159 -141 14 -5 75 43 98 77 34 50 33 142 -2 176 -24 25 -26 25 -206 25 l-181
+                            0 -108 100 c-80 74 -114 100 -134 100 -22 0 -26 -4 -26 -27z"/>
+                            </g>
+                            </svg>
+                            <div class="button_text">Passenger</div>
+                        </div>
+                    </div>
+                    <div class="login_input">
+                        <form class="login_passenger" method="post" action="loginpass">
+                            {% csrf_token %}
+                            <h4>Student ID</h4>
+
+                            <div class="input_box">
+                                <input type="text" placeholder="Student ID" name="studentID" required>
+                                <svg class="error" width="24" height="24" viewBox="0 0 24 24" fill="FF0035" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM11 15H13V17H11V15ZM11 7H13V13H11V7Z" fill="#FF0035"/>
+                                </svg>
+                            </div>
+                            <p class="message">{{ exist }}</p>
+                            
+                            <h4>Password</h4>
+                            <div class="input_box">
+                                <input type="password" placeholder="Password" name="pPass" required>
+                                <svg class="error" width="24" height="24" viewBox="0 0 24 24" fill="FF0035" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM11 15H13V17H11V15ZM11 7H13V13H11V7Z" fill="#FF0035"/>
+                                </svg>
+                            </div>
+                            <p class="message">{{ pw }}</p>
+                            <br>
+                            <input type="submit" value="Log in as passenger">
+                        </form>
+                        <form class="login_driver" method="post" action="logindrive">
+                            {% csrf_token %}
+                            <h4>Student ID</h4>
+
+                            <div class="input_box">
+                                <input type="text" placeholder="Student ID" name="studentID" required>
+                                <svg class="error" width="24" height="24" viewBox="0 0 24 24" fill="FF0035" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM11 15H13V17H11V15ZM11 7H13V13H11V7Z" fill="#FF0035"/>
+                                </svg>
+                            </div>
+                            <p class="message">{{ exist }}</p>
+                            
+                            <h4>Password</h4>
+                            <div class="input_box">
+                                <input type="password" placeholder="Password" name="dPass" required>
+                                <svg class="error" width="24" height="24" viewBox="0 0 24 24" fill="FF0035" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM11 15H13V17H11V15ZM11 7H13V13H11V7Z" fill="#FF0035"/>
+                                </svg>
+                            </div>
+                            
+                            <br>
+                            <input type="submit" value="Log in as driver">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <h5>Dont have an account yet? <a href="register">Sign up</a> here</h5>
+        </div>
+        <div class="login_right"></div>
+    </div>
+    <script type="text/javascript">
+        
+        var msgexist = document.getElementsByClassName("message")
+
+        for (let index = 0; index < msgexist.length; index++) {
+            if(msgexist[index].innerHTML!=""){
+                console.log(msgexist[index].previousElementSibling,msgexist[index])
+                msgexist[index].previousElementSibling.children[1].style.display = "flex"
+            }
+        }
+        var slct = document.getElementsByClassName("login_select");
+        console.log(slct);
+        for (let index = 0; index <slct.length; index++) {
+            slct[index].addEventListener("click", select_role);
+            console.log(slct[index]);
+        }
+        var current = document.getElementById("passenger")
+        var t = current.getElementsByClassName("button_text")[0]
+        t.style.color = "#FDFFFC"
+        current.style.background = "#FFC300"
+        document.getElementById("passenger"+"c").style.opacity = 1;
+        p=current.getElementsByTagName("path")
+        console.log(p)
+        for (let index = 2; index < p.length; index++) {
+            p[index].style.fill = "#FDFFFC";
+        }
+        for (let index = 0; index < 2; index++) {
+            p[index].style.fill = "#4361EE";
+        }
+
+        function select_role(e){
+            function widthchange(i,d){
+                    document.getElementsByClassName("login_"+i)[0].style.width = d
+                }
+            var i = (e.currentTarget.id);
+            var current = document.getElementById(i)
+            if(i==="passenger"){
+                var other = "driver"
+                setTimeout(widthchange(i,"100%"), 2000);
+                document.getElementsByClassName("login_"+i)[0].style.height = "100%"
+                document.getElementById(i+"c").style.opacity = 1;
+                p=current.getElementsByTagName("path")
+                console.log(p)
+                for (let index = 2; index < p.length; index++) {
+                    p[index].style.fill = "#FDFFFC";
+                }
+                for (let index = 0; index < 2; index++) {
+                    p[index].style.fill = "#4361EE";
+                }
+                document.getElementsByClassName("login_input")[0].style.justifyContent = "flex-start";
+                var t = current.getElementsByClassName("button_text")[0]
+                t.style.color = "#FDFFFC"
+                current.style.background = "#FFC300"
+                setTimeout(widthchange(other,"0"), 2000);
+                document.getElementsByClassName("login_"+other)[0].style.height = "0"
+
+
+                document.getElementById(other+"c").style.opacity = 0;
+                var othere = document.getElementById(other)
+                p=othere.getElementsByTagName("path")
+                for (let index = 0; index < p.length; index++) {
+                    p[index].style.fill = "#080705";
+                }
+                var t = othere.getElementsByClassName("button_text")[0]
+                t.style.color = "#080705"
+                document.getElementById(other).style.background = "#FDFFFC"
+            }
+            else if(i==="driver"){
+                var other = "passenger"
+                setTimeout(widthchange(i,"100%"), 2000);
+                document.getElementsByClassName("login_"+i)[0].style.height = "100%"
+                document.getElementById(i+"c").style.opacity = 1;
+                p=current.getElementsByTagName("path")
+                console.log(p)
+                for (let index = 2; index < p.length; index++) {
+                    p[index].style.fill = "#FDFFFC";
+                }
+                for (let index = 0; index < 2; index++) {
+                    p[index].style.fill = "#4361EE";
+                }
+                document.getElementsByClassName("login_input")[0].style.justifyContent = "flex-start";
+                var t = current.getElementsByClassName("button_text")[0]
+                t.style.color = "#FDFFFC"
+                current.style.background = "#FFC300"
+                document.getElementsByClassName("login_"+other)[0].style.height = "0"
+                setTimeout(widthchange(other,"0"), 2000);
+
+
+                document.getElementById(other+"c").style.opacity = 0;
+                var othere = document.getElementById(other)
+                p=othere.getElementsByTagName("path")
+                for (let index = 0; index < p.length; index++) {
+                    p[index].style.fill = "#080705";
+                }
+                var t = othere.getElementsByClassName("button_text")[0]
+                t.style.color = "#080705"
+                document.getElementById(other).style.background = "#FDFFFC"
+            }      
+        }
+    </script>
+       <div class="footer">
+        <div class="logo_containerf">
+            <img src="{% static 'img/MPP.png' %}">
+            <img src="{% static 'img/LogoKPM.png' %}">
+            <img src="{% static 'img/DCS.png' %}">            
+        </div>
+        <h6>© COPYRIGHT <b>KPMB</b> 2023</h6>
+        <br>
+        <h6>DESIGN & DEVELOPMENT BY <b>BIRO AKTIVITI SUKAN DAN KEBAJIKAN DIPLOMA IN COMPUTER SCIENCE ASSOCIATE</b></h6>
+        <h6>IN COLLABORATION WITH <b>ENTREPRENEURSHIP AND INNOVATION EXCO (STUDENT REPRESENTATIVE COUNCIL)</b></h6>
+        <br>
+        <h6>KPMB TIDAK AKAN BERTANGGUNGJAWAB KE ATAS KEROSAKAN ATAU KERUGIAN BERIKUTAN PENGGUNAAN PERKHIDMATAN DI LAMAN WEB INI</h6>
+        <h6>SEMUA MAKLUMAT YANG DIPAPARKAN ADALAH BENAR DAN BETUL PADA MASA DAN TARIKH IA DIMUAT NAIK DAN BOLEH BERUBAH DARI SEMASA KE SEMASA</h6>
+    </div>
+</body>
+</html>
